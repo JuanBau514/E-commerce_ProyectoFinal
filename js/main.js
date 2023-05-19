@@ -184,3 +184,37 @@ const productos = [
         precio: 1000
     }
 ];
+
+const contenedorProductos = document.querySelector("#contenedor-productos");
+const contenedorCarrito = document.querySelector("#carrito-contenedor");
+
+// Funcion que muestra los productos en el HTML
+function mostrarProductos() {
+    productos.forEach((producto) => { // Recorro el array de productos y por cada producto creo un div
+        let div = document.createElement("div"); 
+        div.classList.add("producto"); // Agrego la clase producto al div
+        div.innerHTML = ` 
+            <img class="producto-imagen" src="${producto.imagen}" alt="">
+            <div class="producto-detalles">
+                <h3 class="producto-titulo"> ${producto.titulo} </h3>
+                <p class="producto-precio"> $ ${producto.precio} </p>
+                <button class="producto-agregar" onclick="agregarAlCarrito('${producto.id}')"> Agregar al Carrito </button>
+            </div>
+        `;
+        contenedorProductos.appendChild(div);
+    });
+}
+
+mostrarProductos();
+
+/*
+<div class="producto">
+                    <img class="producto-imagen" src="./img/camisetas/02.jpg" alt="">
+                    <div class="producto-detalles">
+                        <h3 class="producto-titulo"> Producto 2 </h3>
+                        <p class="producto-precio"> $ 100.000 </p>
+                        <button class="producto-agregar"> Agregar al Carrito </button> 
+                        <!-- En el botton podria mandar una pagina de fault para que se muestren todos los productos -->
+                    </div>
+                </div>
+*/

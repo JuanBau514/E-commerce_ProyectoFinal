@@ -83,6 +83,18 @@ aside{
     margin-top: 2rem;
 }
 
+.numerito{
+    background-color: #FFFFFF;
+    color: var(--clr-main);
+    border-radius: 20%;
+    padding: .25rem;
+}
+
+.botton-carrito.active.numerito{
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+}
+
 .bi-hand-index-thumb-fill, .bi-hand-index-thumb { 
     transform: rotateZ(90deg); 
 }
@@ -164,9 +176,9 @@ main {
     gap: 1rem;
 }
 
-.carrito-vacio{
+.carrito-comprado, .carrito-vacio{
     color: var(--clr-main);
-    display: none;
+ 
 }
 
 .carrito-productos{
@@ -251,4 +263,8 @@ main {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
 
+}
+
+.disabled{
+    display: none;
 }
