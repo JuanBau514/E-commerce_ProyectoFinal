@@ -6,8 +6,8 @@ const productos = [
         titulo: "Abrigo 01",
         imagen: "./img/abrigos/01.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Celulares",
+            id: "celulares"
         },
         precio: 1000
     },
@@ -16,8 +16,8 @@ const productos = [
         titulo: "Abrigo 02",
         imagen: "./img/abrigos/02.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Celulares",
+            id: "celulares"
         },
         precio: 1000
     },
@@ -26,8 +26,8 @@ const productos = [
         titulo: "Abrigo 03",
         imagen: "./img/abrigos/03.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Celulares",
+            id: "celulares"
         },
         precio: 1000
     },
@@ -36,8 +36,8 @@ const productos = [
         titulo: "Abrigo 04",
         imagen: "./img/abrigos/04.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Celulares",
+            id: "celulares"
         },
         precio: 1000
     },
@@ -46,8 +46,8 @@ const productos = [
         titulo: "Abrigo 05",
         imagen: "./img/abrigos/05.jpg",
         categoria: {
-            nombre: "Abrigos",
-            id: "abrigos"
+            nombre: "Celulares",
+            id: "celulares"
         },
         precio: 1000
     },
@@ -57,8 +57,8 @@ const productos = [
         titulo: "Camiseta 01",
         imagen: "./img/camisetas/01.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -67,8 +67,8 @@ const productos = [
         titulo: "Camiseta 02",
         imagen: "./img/camisetas/02.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -77,8 +77,8 @@ const productos = [
         titulo: "Camiseta 03",
         imagen: "./img/camisetas/03.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -87,8 +87,8 @@ const productos = [
         titulo: "Camiseta 04",
         imagen: "./img/camisetas/04.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -97,8 +97,8 @@ const productos = [
         titulo: "Camiseta 05",
         imagen: "./img/camisetas/05.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -107,8 +107,8 @@ const productos = [
         titulo: "Camiseta 06",
         imagen: "./img/camisetas/06.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -117,8 +117,8 @@ const productos = [
         titulo: "Camiseta 07",
         imagen: "./img/camisetas/07.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -127,8 +127,8 @@ const productos = [
         titulo: "Camiseta 08",
         imagen: "./img/camisetas/08.jpg",
         categoria: {
-            nombre: "Camisetas",
-            id: "camisetas"
+            nombre: "Asesorios",
+            id: "asesorios"
         },
         precio: 1000
     },
@@ -138,8 +138,8 @@ const productos = [
         titulo: "Pantalón 01",
         imagen: "./img/pantalones/01.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Hardware",
+            id: "hardware"
         },
         precio: 1000
     },
@@ -148,8 +148,8 @@ const productos = [
         titulo: "Pantalón 02",
         imagen: "./img/pantalones/02.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Hardware",
+            id: "hardware"
         },
         precio: 1000
     },
@@ -158,8 +158,8 @@ const productos = [
         titulo: "Pantalón 03",
         imagen: "./img/pantalones/03.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Hardware",
+            id: "hardware"
         },
         precio: 1000
     },
@@ -168,8 +168,8 @@ const productos = [
         titulo: "Pantalón 04",
         imagen: "./img/pantalones/04.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Hardware",
+            id: "hardware"
         },
         precio: 1000
     },
@@ -178,43 +178,92 @@ const productos = [
         titulo: "Pantalón 05",
         imagen: "./img/pantalones/05.jpg",
         categoria: {
-            nombre: "Pantalones",
-            id: "pantalones"
+            nombre: "Hardware",
+            id: "hardware"
         },
         precio: 1000
     }
 ];
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
-const contenedorCarrito = document.querySelector("#carrito-contenedor");
+const botonesCategoria = document.querySelectorAll(".boton-categoria");
+const tituloPrincipal = document.querySelector("#titulo-principal");
+let botonesAgregar = document.querySelectorAll(".producto-agregar");
+const numeritoCarrito = document.querySelector("#numerito");
 
 // Funcion que muestra los productos en el HTML
-function mostrarProductos() {
-    productos.forEach((producto) => { // Recorro el array de productos y por cada producto creo un div
+function mostrarProductos(productosElegidos) {
+
+    contenedorProductos.innerHTML = ""; // Limpio el HTML
+
+    productosElegidos.forEach((producto) => { // Recorro el array de productos y por cada producto creo un div
         let div = document.createElement("div"); 
         div.classList.add("producto"); // Agrego la clase producto al div
         div.innerHTML = ` 
-            <img class="producto-imagen" src="${producto.imagen}" alt="">
+            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             <div class="producto-detalles">
                 <h3 class="producto-titulo"> ${producto.titulo} </h3>
                 <p class="producto-precio"> $ ${producto.precio} </p>
-                <button class="producto-agregar" onclick="agregarAlCarrito('${producto.id}')"> Agregar al Carrito </button>
+                <button class="producto-agregar" id="${producto.id}"> Agregar al Carrito </button>
             </div>
         `;
         contenedorProductos.appendChild(div);
     });
+    actualizarBotonesAgregar();
+   
 }
 
-mostrarProductos();
+mostrarProductos(productos);
 
-/*
-<div class="producto">
-                    <img class="producto-imagen" src="./img/camisetas/02.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo"> Producto 2 </h3>
-                        <p class="producto-precio"> $ 100.000 </p>
-                        <button class="producto-agregar"> Agregar al Carrito </button> 
-                        <!-- En el botton podria mandar una pagina de fault para que se muestren todos los productos -->
-                    </div>
-                </div>
-*/
+botonesCategoria.forEach((boton) => { 
+    boton.addEventListener("click", (evento) => { // Agrego un evento click a cada boton
+
+        botonesCategoria.forEach( boton =>  boton.classList.remove("active")  ); // Remuevo la clase boton-activo de cada boton
+        evento.target.classList.add("active"); // Agrego la clase boton-activo al boton clickeado
+
+        if(evento.currentTarget.id !== "todos") { // Si el id del boton clickeado es distinto a "todos", filtro los productos
+            
+            const productoCategoria = productos.find((producto) => producto.categoria.id === evento.currentTarget.id); // Busco el producto que coincida con el id del boton clickeado
+            tituloPrincipal.innerText = productoCategoria.categoria.nombre; // Cambio el titulo principal por el nombre de la categoria
+
+            const productosEscogidos = productos.filter((producto) => producto.categoria.id === evento.currentTarget.id);  
+            mostrarProductos(productosEscogidos);
+        } else { // Si el id del boton clickeado es igual a "todos", muestro todos los productos
+            tituloPrincipal.innerText = "Todos los Productos";
+            mostrarProductos(productos);
+        }
+    });
+});
+
+function actualizarBotonesAgregar () {
+    botonesAgregar = document.querySelectorAll(".producto-agregar");
+    botonesAgregar.forEach((boton) => {
+        boton.addEventListener("click", agregarAlCarrito);
+    });
+}
+
+const productosEnCarrito = [];
+
+function agregarAlCarrito (evento) {
+
+    const idBoton = evento.currentTarget.id;
+    const productoElegido = productos.find(producto => producto.id === idBoton);
+
+    if ( productosEnCarrito.some( producto => producto.id === idBoton) ) {
+        const index = productosEnCarrito.findIndex( producto => producto.id === idBoton );
+        productosEnCarrito[index].cantidad++;
+    } else {
+        productoElegido.cantidad = 1;
+        productosEnCarrito.push(productoElegido);
+    }
+
+    actualizarNumerito();
+
+    localStorage.setItem("Productos-en-Carrito", JSON.stringify(productosEnCarrito));
+}
+
+function actualizarNumerito () {
+    let Nuevonumerito = productosEnCarrito.reduce( (acc, producto) => acc + producto.cantidad , 0);
+    numerito.innerText = Nuevonumerito;
+    console.log(numerito);
+}
