@@ -12,10 +12,26 @@
 <body>
 
     <div class="contenedor_Menu">
+
+        <header class="header-mobile">
+            <h1 class="logo"> Tech Doctor </h1>
+            <button  class="abrirMenu" id="openButton">
+                <i class="bi bi-list-stars"></i>
+            </button>
+        </header>
+        
         <aside> <!-- Esta propiedad la uso para incluir el Menu a la derecha de la pagina y como backgroond -->
+             
+            <button  class="cerrarMenu" id="openClose">
+                <i class="bi bi-x"></i>
+            </button>
+
             <header>
                 <h1 class="logo"> Tech Doctor </h1>
             </header>
+
+            
+
             <nav>
                 <ul class="menu">
                     <li> <button id="todos" class= "botton-menu boton-categoria active" > 
@@ -59,7 +75,7 @@
     </div>
     
 </body>
-
 <script src="./js/main.js"></script>
+<script src="./js/menu.js"></script>
 
 </html>

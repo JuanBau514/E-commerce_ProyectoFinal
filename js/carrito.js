@@ -30,7 +30,7 @@ if (productosEnCarrito && productosEnCarrito.length > 0) {
             </div>
             <div class="carrito-producto-cantidad">
                 <small> Cantidad </small>
-                <input type="number" value="1" min="1">
+                
                 <p> ${producto.cantidad} </p>
             </div>
             <div class="carrito-producto-precio">
