@@ -1,9 +1,6 @@
 package com.service.ecomerce.Services;
 
-import java.util.ArrayList;
 import java.util.Optional;
-
-import javax.swing.text.html.Option;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,31 +12,49 @@ import com.service.ecomerce.Repositorios.productoRepositorio;
 public class productoServicio {
 
     @Autowired
-    private productoRepositorio repositorioProducto;
-    
-    public ArrayList<productoModelo> obtenerProductos() {
-        return (ArrayList<productoModelo>) repositorioProducto.findAll();
-    }
+    private  productoRepositorio repositorioProducto;
 
-    public productoModelo guardarProducto(productoModelo producto) {
+    public  productoModelo guardar(productoModelo producto) {
         return repositorioProducto.save(producto);
     }
 
-    public Optional<productoModelo> obtenerPorId(Integer id) {
-        return repositorioProducto.findById(id);
-    }
-    
-    public ArrayList<productoModelo> obtenerPorNombre(String nombre) {
-        return repositorioProducto.findByNombre(nombre);
+    public java.util.List<productoModelo> obtenerTodos() {
+        return (java.util.List<productoModelo>) repositorioProducto.findAll();
     }
 
-    public boolean eliminarProducto(Integer id) {
-        try {
-            repositorioProducto.deleteById(id);
-            return true;
-        } catch (Exception e) {
-            return false;
+    public Optional<productoModelo> obtenerPorId(int id) {
+        return repositorioProducto.findById(id);
+    }
+
+    public java.util.List<productoModelo> obtenerPorNombre(String Titulo) {
+        return repositorioProducto.findByTitulo(Titulo);
+    }
+
+    public void eliminarPorId(int id) {
+        repositorioProducto.deleteById(id);
+    }
+
+    public void eliminarPorNombre(String Titulo) {
+        repositorioProducto.deleteByTitulo(Titulo);
+    }
+
+    public void eliminarTodos() {
+        repositorioProducto.deleteAll();
+    }
+
+    public void actualizar(productoModelo productoModelo) {
+        Optional<productoModelo> productoExistente = repositorioProducto.findById(productoModelo.getId());
+        if (productoExistente.isPresent()) {
+            productoModelo existente = productoExistente.get();
+            existente.setTitulo(productoModelo.getTitulo());
+            existente.setImagen(productoModelo.getImagen());
+            existente.setCategoria(productoModelo.getCategoria());
+            existente.setDescripcion(productoModelo.getDescripcion());
+            existente.setPrecio(productoModelo.getPrecio());
+            existente.setStock(productoModelo.getStock());
+            repositorioProducto.save(existente);
         }
     }
+    
     
 }
